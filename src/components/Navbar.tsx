@@ -34,6 +34,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLanguage }) => {
         {/*Right*/}
         <div className="flex flex-col md:flex-row gap-4">
           <li>
+            <Button asChild className="">
+              {currentLanguage === "en" ? (
+                <a href="/">Ver em português</a>
+              ) : (
+                <a href="/en">Ver em inglês</a>
+              )}
+            </Button>
+          </li>
+          <li>
             <Button asChild>
               <a href="/blog">{dict[currentLanguage].blog}</a>
             </Button>
