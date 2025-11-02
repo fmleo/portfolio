@@ -48,8 +48,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLanguage }) => {
             </Button>
           </li>
           <li>
-            <Button asChild>
-              <a href="/projetos">{dict[currentLanguage].projects}</a>
+            <Button asChild variant="noShadow">
+              <span className="select-none">
+                {dict[currentLanguage].projects}
+              </span>
             </Button>
           </li>
           <li>
