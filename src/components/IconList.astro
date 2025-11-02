@@ -19,7 +19,7 @@ let iconList = [
     "typescript",
     "vitejs",
 ];
-iconList.sort(() => Math.random() - 0.5);
+iconList.sort((a, b) => a.localeCompare(b));
 ---
 
 <div
