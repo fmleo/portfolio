@@ -1,16 +1,56 @@
 ---
-import '../styles/global.css';
-const { content } = Astro.props;
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+
+import { Navbar } from "@/components/Navbar";
+import "devicon/devicon.min.css";
+
+const currentLanguage = Astro.currentLocale;
 ---
 
+<script is:inline>
+    const getThemePreference = () => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
+            return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    };
+    const isDark = getThemePreference() === "dark";
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+    if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+            const isDark = document.documentElement.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        });
+    }
+</script>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+    </head>
+    <body class="w-full md:w-2/3 m-auto h-screen">
+        <Navbar currentLanguage={currentLanguage || "pt-br"} />
+        <div class="m-8">
+            <slot />
+        </div>
+    </body>
 </html>
