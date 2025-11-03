@@ -64,6 +64,26 @@
     --font-weight-heading: 900;
 
     --font-mono: "Iosevka", monospace;
+
+    --animate-color-cycle: color-cycle 5s linear infinite;
+
+    @keyframes color-cycle {
+        0% {
+            color: var(--chart-2);
+        }
+        25% {
+            color: var(--chart-3);
+        }
+        50% {
+            color: var(--chart-4);
+        }
+        75% {
+            color: var(--chart-5);
+        }
+        100% {
+            color: var(--chart-2);
+        }
+    }
 }
 
 @layer base {
