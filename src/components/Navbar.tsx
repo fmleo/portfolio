@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLanguage }) => {
               {currentLanguage === "en" ? (
                 <a href="/">Ver em português</a>
               ) : (
-                <a href="/en">Ver em inglês</a>
+                <a href="/en">See in english</a>
               )}
             </Button>
           </li>
