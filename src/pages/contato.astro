@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/main.astro";
+
+import { ContactListItem } from "@/components/ContactListItem";
+import { Mail, MessageCircle, BriefcaseBusiness, Computer } from "lucide-react";
+---
+
+<Layout title="Contato" }>
+    <div class="divide-y divide-gray-200 dark:divide-gray-700">
+        <h1 class="pb-4 mb-6">Contato</h1>
+
+        <ul class="flex flex-col gap-4">
+            <ContactListItem
+                link="mailto:eu@lfm.dev.br"
+                IconComponent={Mail}
+                colors="hover:text-red-500 dark:hover:text-red-400"
+                text="Email"
+            />
+            <ContactListItem
+                link="https://wa.me/5554996925138"
+                IconComponent={MessageCircle}
+                colors="hover:text-green-500 dark:hover:text-green-400"
+                text="Whatsapp"
+            />
+            <!-- <ContactListItem link="https://t.me/comercimento" icon="message-circle" color="text-sky-500" colorDark="text-sky-400" text="Telegram"/> -->
+            <ContactListItem
+                link="https://www.linkedin.com/in/fmleonardo/"
+                IconComponent={BriefcaseBusiness}
+                colors="hover:text-blue-700 dark:hover:text-blue-500"
+                text="LinkedIn"
+            />
+            <ContactListItem
+                link="https://github.com/fmleonardo"
+                IconComponent={Computer}
+                colors="hover:text-emerald-500 dark:hover:text-emerald-400"
+                text="GitHub"
+            />
+        </ul>
+    </div>
+</Layout>
