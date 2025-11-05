@@ -28,7 +28,7 @@ const sortedProjects = projects.sort(
                     <CardHeader>
                         <CardTitle>{project.data.title}</CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="grow">
                         <p>{project.data.description}</p>
                         {project.data.tags.map((tag) => (
                             <Badge>{tag}</Badge>
