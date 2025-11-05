@@ -1,7 +1,6 @@
 ---
 title: "SEMAC IFRS - Sistema de Gestão da Semana Acadêmica"
 description: "Plataforma para submissão de trabalhos acadêmicos e gestão da Semana Acadêmica do IFRS Campus Vacaria"
-image: "/images/projects/semac-ifrs.jpg"
 tags: ["Django", "Python", "Materialize", "Apache", "MySql"]
 featured: false
 publishDate: 2021-03-15

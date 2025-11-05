@@ -1,7 +1,6 @@
 ---
 title: "LabFito - Sistema de Monitoramento e Alerta de Ferrugem Asiática"
 description: "Plataforma integrada de IoT e web para monitoramento meteorológico e prevenção de ferrugem asiática da soja"
-image: "/images/projects/labfito.jpg"
 tags: ["Django", "IoT", "ESP32", "WhatsApp", "Leaflet", "Plotly", "Python"]
 demo: "https://labfito.vacaria.ifrs.edu.br"
 featured: true

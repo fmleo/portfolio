@@ -1,7 +1,6 @@
 ---
 title: "Pakytarefas - Sistema de Distribuição Automática de Tarefas"
 description: "Sistema automatizado para coleta e distribuição de tarefas de gincana via WhatsApp, auxiliando mais de 300 participantes"
-image: "/images/projects/pakytarefas.jpg"
 tags:
   [
     "Python",

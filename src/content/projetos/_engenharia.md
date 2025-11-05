@@ -1,7 +1,6 @@
 ---
 title: "Sistema de Gestão para Empresas de Engenharia"
 description: "ERP completo para gerenciamento de obras, clientes, processos e finanças desenvolvido para pequenas empresas de engenharia civil"
-image: "/images/projects/erp-engenharia.jpg"
 tags:
   [
     "React",
