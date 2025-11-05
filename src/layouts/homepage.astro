@@ -7,10 +7,13 @@ import IconList from "@/components/IconList.astro";
 <Layout>
     <div class="flex flex-col lg:flex-row gap-8">
         <div class="flex flex-col justify-between gap-8">
-            <h1 class="hover:animate-color-cycle">Leonardo</h1>
-            <h4>
-                <slot name="title" />
-            </h4>
+            <div class="text-2xl font-bold">
+                <p class="hover:animate-color-cycle">Leonardo</p>
+                <p>
+                    <slot name="title" />
+                </p>
+            </div>
+
             <p class="text-lg">
                 <slot name="description" />
             </p>

@@ -39,10 +39,17 @@ import "devicon/devicon.min.css";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>lfm</title>
     </head>
-    <body class="w-full md:w-3/4 lg:w-3/5 max-w-[1200px] m-auto h-screen">
+    <body
+        class="w-full md:w-3/4 lg:w-3/5 max-w-[1200px] m-auto h-screen flex flex-col"
+    >
         <Navbar />
-        <div class="m-8">
+        <div class="m-8 grow">
             <slot />
         </div>
+        <hr class="text-foreground" />
+        <footer class="flex flex-col justify-center items-center h-32">
+            <p class="text-sm">Feito por Leonardo</p>
+            <a href="mailto:eu@lfm.dev.br">eu@lfm.dev.br</a>
+        </footer>
     </body>
 </html>
