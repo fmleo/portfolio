@@ -3,38 +3,64 @@ import Layout from "@/layouts/main.astro";
 
 import { ContactListItem } from "@/components/ContactListItem";
 import { Mail, MessageCircle, BriefcaseBusiness, Computer } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 ---
 
 <Layout title="Contato" }>
     <div class="divide-y divide-gray-200 dark:divide-gray-700">
         <h1 class="pb-4 mb-6">Contato</h1>
 
-        <ul class="flex flex-col gap-4">
-            <ContactListItem
-                link="mailto:eu@lfm.dev.br"
-                IconComponent={Mail}
-                colors="hover:text-red-500 dark:hover:text-red-400"
-                text="Email"
-            />
-            <ContactListItem
-                link="https://wa.me/5554996925138"
-                IconComponent={MessageCircle}
-                colors="hover:text-green-500 dark:hover:text-green-400"
-                text="Whatsapp"
-            />
-            <!-- <ContactListItem link="https://t.me/comercimento" icon="message-circle" color="text-sky-500" colorDark="text-sky-400" text="Telegram"/> -->
-            <ContactListItem
-                link="https://www.linkedin.com/in/fmleonardo/"
-                IconComponent={BriefcaseBusiness}
-                colors="hover:text-blue-700 dark:hover:text-blue-500"
-                text="LinkedIn"
-            />
-            <ContactListItem
-                link="https://github.com/fmleonardo"
-                IconComponent={Computer}
-                colors="hover:text-emerald-500 dark:hover:text-emerald-400"
-                text="GitHub"
-            />
-        </ul>
+        <div class="flex flex-col md:flex-row gap-8">
+            <ul class="flex flex-col gap-4 grow-2">
+                <ContactListItem
+                    link="mailto:eu@lfm.dev.br"
+                    IconComponent={Mail}
+                    colors="hover:text-red-500 dark:hover:text-red-400"
+                    text="Email"
+                />
+                <ContactListItem
+                    link="https://wa.me/5554996925138"
+                    IconComponent={MessageCircle}
+                    colors="hover:text-green-500 dark:hover:text-green-400"
+                    text="Whatsapp"
+                />
+                <!-- <ContactListItem link="https://t.me/comercimento" icon="message-circle" color="text-sky-500" colorDark="text-sky-400" text="Telegram"/> -->
+                <ContactListItem
+                    link="https://www.linkedin.com/in/fmleonardo/"
+                    IconComponent={BriefcaseBusiness}
+                    colors="hover:text-blue-700 dark:hover:text-blue-500"
+                    text="LinkedIn"
+                />
+                <ContactListItem
+                    link="https://github.com/fmleonardo"
+                    IconComponent={Computer}
+                    colors="hover:text-emerald-500 dark:hover:text-emerald-400"
+                    text="GitHub"
+                />
+            </ul>
+
+            <form
+                class="flex flex-col grow-6 gap-3"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+            >
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="aa933ecf-1ad5-4807-860c-0f2446f2796b"
+                />
+                <Label htmlFor="name">Nome</Label>
+                <Input type="text" name="name" required />
+
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" name="email" required />
+                <Label htmlFor="message">Mensagem</Label>
+                <Textarea name="message" required />
+                <Button type="submit">Enviar</Button>
+            </form>
+        </div>
     </div>
 </Layout>
