@@ -1,0 +1,56 @@
+---
+import Prose from "@/components/Prose.astro";
+import { Badge } from "@/components/ui/badge";
+import Layout from "@/layouts/main.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: { slug: project.id },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+
+if (!project) {
+    throw new Error("Project not found");
+}
+
+const { Content } = await render(project);
+---
+
+<Layout>
+    <div class="flex flex-col gap-4">
+        <h1>{project.data.title}</h1>
+
+        <p>{project.data.description}</p>
+
+        <div>{project.data.tags.map((t) => <Badge>{t}</Badge>)}</div>
+
+        {
+            project.data.image && (
+                <img src={project.data.image} alt={project.data.title} />
+            )
+        }
+
+        {
+            project.data.github || project.data.demo ? (
+                <div class="links">
+                    {project.data.github && (
+                        <a href={project.data.github}>GitHub</a>
+                    )}
+                    {project.data.demo && (
+                        <a href={project.data.demo}>Live Demo</a>
+                    )}
+                </div>
+            ) : null
+        }
+
+        <Prose>
+            <Content />
+        </Prose>
+    </div>
+</Layout>

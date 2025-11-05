@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/main.astro";
+
+import { getCollection } from "astro:content";
+
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+
+import { Badge } from "@/components/ui/badge";
+
+const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort(
+    (a, b) => (a.data.order || 999) - (b.data.order || 999),
+);
+---
+
+<Layout>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {
+            sortedProjects.map((project) => (
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{project.data.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>{project.data.description}</p>
+                        {project.data.tags.map((tag) => (
+                            <Badge>{tag}</Badge>
+                        ))}
+                    </CardContent>
+                    <CardFooter>
+                        <a href={`/projetos/${project.id}`}>View Project</a>
+                    </CardFooter>
+                </Card>
+            ))
+        }
+    </div>
+</Layout>
