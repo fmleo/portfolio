@@ -2,7 +2,13 @@
 import Layout from "@/layouts/main.astro";
 
 import { ContactListItem } from "@/components/ContactListItem";
-import { Mail, MessageCircle, BriefcaseBusiness, Computer } from "lucide-react";
+import {
+    Mail,
+    MessageCircle,
+    BriefcaseBusiness,
+    Computer,
+    BookOpen,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -39,6 +45,12 @@ import { Label } from "@/components/ui/label";
                     IconComponent={Computer}
                     colors="hover:text-emerald-500 dark:hover:text-emerald-400"
                     text="GitHub"
+                />
+                <ContactListItem
+                    link="http://lattes.cnpq.br/7632383739500501"
+                    IconComponent={BookOpen}
+                    colors="hover:text-yellow-500 dark:hover:text-yellow-400"
+                    text="Lattes"
                 />
             </ul>
 
