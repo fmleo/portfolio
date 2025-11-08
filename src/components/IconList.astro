@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 let iconList = [
     "cloudflare",
     "css3",
@@ -25,5 +27,5 @@ iconList.sort((a, b) => a.localeCompare(b));
 <div
     class="grid grid-cols-6 md:grid-cols-9 xl:grid-cols-18 gap-4 text-2xl text-purple-600 dark:text-purple-400"
 >
-    {iconList.map((icon) => <i class={`devicon-${icon}-plain`} />)}
+    {iconList.map((icon) => <Icon name={icon} />)}
 </div>
