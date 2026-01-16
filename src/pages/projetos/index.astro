@@ -24,20 +24,19 @@ const sortedProjects = projects.sort(
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
         {
             sortedProjects.map((project) => (
-                <Card>
-                    <CardHeader>
-                        <CardTitle>{project.data.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="grow">
-                        <p>{project.data.description}</p>
-                        {project.data.tags.map((tag) => (
-                            <Badge>{tag}</Badge>
-                        ))}
-                    </CardContent>
-                    <CardFooter>
-                        <a href={`/projetos/${project.id}`}>Ver projeto</a>
-                    </CardFooter>
-                </Card>
+                <a href={`/projetos/${project.id}`} class="card-link">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>{project.data.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="grow">
+                            <p>{project.data.description}</p>
+                            {project.data.tags.map((tag) => (
+                                <Badge>{tag}</Badge>
+                            ))}
+                        </CardContent>
+                    </Card>
+                </a>
             ))
         }
     </div>

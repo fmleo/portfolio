@@ -121,7 +121,7 @@
         @apply text-lg;
     }
 
-    a {
+    a:not(.card-link) {
         @apply text-main underline;
     }
 }
